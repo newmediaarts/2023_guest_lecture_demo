@@ -18,12 +18,13 @@ export function initPreloader() {
 
   // Create a conditional statement to add different logic for different asset types
   assetsToLoad.forEach((asset, index) => {
+    const srcValue = asset.getAttribute("data-src");
+
     switch (asset.tagName.toLowerCase()) {
       case "video":
         // Get the placeholder "data-src" attribute and change it to the "src"
         // You want to have this effect so that you can run a callback
         // when the asset loads
-        const srcValue = asset.getAttribute("data-src");
         asset.setAttribute("src", srcValue);
 
         // Run a preloader update once the asset has been loaded
@@ -44,6 +45,21 @@ export function initPreloader() {
        * case 'img':
        *   console.log('logic for an image')
        */
+
+      case "img":
+        asset.setAttribute("src", srcValue);
+
+            asset.onload = () => {
+
+            numberOfLoadedAssets += 1;
+                updatePreloader(
+                    preloaderElement,
+                    progressElement,
+                    totalAssets,
+                    numberOfLoadedAssets
+                )
+            }
+
       default:
         break;
     }
