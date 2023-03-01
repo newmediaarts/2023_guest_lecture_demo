@@ -1,0 +1,10 @@
+@use "../utils/_breakpoint";
+
+.spacer {
+  --spacer-height: 50px;
+  height: var(--spacer-height);
+
+  @include breakpoint.laptop {
+    --spacer-height: 100px;
+  }
+}

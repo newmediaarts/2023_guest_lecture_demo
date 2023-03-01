@@ -1,0 +1,73 @@
+@use "../utils/_container";
+@use "../utils/_color";
+
+.header {
+  @include container.container;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 15px 0;
+  z-index: 10;
+}
+
+.header__logo__illustration {
+  --logo-bg: #{color.$black};
+  --before-bg: #{color.$white};
+  --after-bg: #{color.$black};
+  display: block;
+  position: relative;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background: var(--logo-bg);
+  transition: background 0.2s ease-in-out;
+
+  &:before,
+  &:after {
+    --psuedo-size: 30px;
+    position: absolute;
+    content: "";
+    height: var(--psuedo-size);
+    width: var(--psuedo-size);
+    top: 10px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+  }
+
+  &:before {
+    background: var(--before-bg);
+  }
+
+  &:after {
+    --psuedo-size: 25px;
+    background: var(--after-bg);
+  }
+
+  &:hover {
+    --logo-bg: #{color.$white};
+    --before-bg: #{color.$black};
+    --after-bg: #{color.$white};
+  }
+}
+
+.header__nav__link {
+  --nav-link-color: #{color.$white};
+  --nav-link-bg: #{color.$black};
+  background: var(--nav-link-bg);
+  color: var(--nav-link-color);
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.2s ease-in-out;
+
+  &:hover {
+    --nav-link-color: #{color.$black};
+    --nav-link-bg: #{color.$white};
+  }
+}

@@ -1,0 +1,52 @@
+@use "../utils/container";
+@use "../utils/color";
+@use "../utils/type";
+
+.hero {
+  position: relative;
+  height: 85vh;
+  display: flex;
+  align-items: flex-end;
+}
+
+.hero__asset {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  filter: brightness(0.8);
+}
+
+.hero__asset__video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.hero__content {
+  @include container.container;
+  color: color.$white;
+  padding-bottom: 50px;
+}
+
+.hero__content__headlines {
+  @include type.headline-one;
+
+  div {
+    width: fit-content;
+    max-width: 300px;
+  }
+}
+
+.hero__content__headlines__secondary {
+  position: relative;
+  transform: translateX(clamp(50px, 30vw, 300px));
+}
+
+.hero__content__body {
+  --type-max-width: 30ch;
+  @include type.body;
+  text-indent: 4em;
+}

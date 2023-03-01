@@ -1,0 +1,21 @@
+@import "./global/reset";
+@import "./global/_header";
+@import "./global/_preloader";
+@import "./modules/hero";
+@import "./modules/work";
+@import "./modules/_single-column";
+@import "./modules/_spacer";
+
+// Smooth scroll styles
+html,
+body {
+  overscroll-behavior: none;
+}
+
+main {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+}

@@ -1,0 +1,31 @@
+@use "./breakpoint";
+@use "./color";
+
+@mixin type($size, $line-height: 1, $letter-spacing: 0) {
+  font-size: $size;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+}
+
+@mixin headline-one {
+  --type-style: "Headline One";
+  @include type(50px, 1.25, 0.2px);
+}
+
+@mixin headline-two {
+  --type-style: "Headline Two";
+  @include type(36px, 1.25, 0.2px);
+}
+
+@mixin body {
+  --type-style: "Body";
+  @include type(16px, 1.25);
+  max-width: var(--type-max-width, 75ch);
+}
+
+@mixin link-large {
+  --type-style: "Link large";
+  @include type(30px, 1, 0.2px);
+  text-decoration: none;
+  color: color.$black;
+}

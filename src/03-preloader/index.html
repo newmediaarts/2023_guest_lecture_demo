@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>My Cool Website</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="./scss/main.scss" rel="stylesheet" />
+  </head>
+
+  <body>
+    <header class="header">
+      <a class="header__logo" href="./index.html" aria-label="Go to hompeage">
+        <span class="header__logo__illustration"></span>
+      </a>
+      <nav class="header__nav">
+        <a class="header__nav__link" href="./about.html">About</a>
+      </nav>
+    </header>
+
+    <main>
+      <div data-template="home" smooth-scroll>
+        <section class="hero">
+          <div class="hero__asset">
+            <video
+              class="hero__asset__video"
+              data-src="../assets/home_hero.mp4"
+              autoplay
+              muted
+              playsinline
+              loop
+            ></video>
+          </div>
+          <div class="hero__content">
+            <!-- Separate the headlines, but have them read as one line of text for screen readers -->
+            <div
+              class="hero__content__headlines"
+              aria-label="This is my headline, its really cool to read"
+            >
+              <div class="hero__content__headlines__primary" aria-hidden="true">
+                This is my headline
+              </div>
+              <div
+                class="hero__content__headlines__secondary"
+                aria-hidden="true"
+              >
+                its really cool to read
+              </div>
+            </div>
+            <div class="hero__content__body">
+              <p>
+                Williamsburg tumblr normcore selvage affogato mixtape hexagon.
+                Beard praxis waistcoat vaporware, cornhole typewriter enamel pin
+                cray health goth direct&nbsp;trade
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <div class="spacer" aria-hidden="true"></div>
+
+        <section class="single-column">
+          <h2 class="single-column__headline">Cool title section</h2>
+          <div class="single-column__body">
+            <p>
+              Praxis banjo photo booth food truck prism PBR&B plaid. Schlitz DIY
+              skateboard fanny pack fashion axe bruh hammock vegan. Seitan
+              shoreditch truffaut biodiesel try-hard. Selfies direct trade chia
+              DSA tofu Brooklyn ugh af. Tattooed waistcoat mumblecore, kombucha
+              jianbing cray authentic wolf cred listicle marfa typewriter
+              post-ironic. Succulents whatever edison bulb, bodega boys migas
+              yuccie intelligentsia keffiyeh ascot ugh synth chillwave vape
+              green juice palo santo.
+            </p>
+            <p>
+              Umami raw denim sriracha kitsch DIY, butcher gastropub locavore
+              street art. Prism tote bag wayfarers, semiotics tofu umami
+              shoreditch four dollar toast salvia chambray. Chartreuse butcher
+              8-bit normcore cray woke. Before they sold out lumbersexual
+              fingerstache pork belly master cleanse chartreuse seitan vape meh
+              woke distillery lomo. Four dollar toast flexitarian you probably
+              haven't heard of them shoreditch chartreuse bushwick. Flexitarian
+              lumbersexual aesthetic, cloud bread schlitz put a bird on it pok
+              pok keffiyeh art party. JOMO offal migas viral polaroid narwhal
+              tattooed.
+            </p>
+          </div>
+        </section>
+
+        <div class="spacer" aria-hidden="true"></div>
+
+        <section class="work">
+          <div class="work__assets">
+            <video
+              class="work__assets__video"
+              data-src="../assets/home_item-one.mp4"
+              playsinline
+              muted
+              loop
+              active
+            ></video>
+
+            <video
+              class="work__assets__video"
+              data-src="../assets/home_item-two.mp4"
+              playsinline
+              muted
+              loop
+            ></video>
+
+            <video
+              class="work__assets__video"
+              data-src="../assets/home_item-three.mp4"
+              playsinline
+              muted
+              loop
+            ></video>
+          </div>
+          <div class="work__links">
+            <a class="work__links__link" href="#" active>
+              <span class="work__links__link__count">01</span>
+              Item One
+            </a>
+            <a class="work__links__link" href="#">
+              <span class="work__links__link__count">02</span>
+              Item Two</a
+            >
+            <a class="work__links__link" href="#">
+              <span class="work__links__link__count">03</span>
+              Item Three</a
+            >
+          </div>
+        </section>
+
+        <div class="spacer" aria-hidden="true"></div>
+      </div>
+    </main>
+    <div class="preloader">
+      <div class="preloader__headline">Loading...</div>
+      <div class="preloader__progress">0%</div>
+    </div>
+
+    <script src="./js/main.js" type="module"></script>
+  </body>
+</html>

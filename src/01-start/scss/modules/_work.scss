@@ -1,0 +1,89 @@
+@use "../utils/breakpoint";
+@use "../utils/container";
+@use "../utils/type";
+@use "../utils/color";
+
+.work {
+  @include container.container;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  @include breakpoint.laptop {
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+}
+
+.work__assets {
+  position: relative;
+  height: 50vh;
+  width: 100%;
+  overflow: hidden;
+
+  @include breakpoint.laptop {
+    flex: 2;
+  }
+}
+
+.work__assets__video {
+  --video-height: 0%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  opacity: 1;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% var(--video-height),
+    0% var(--video-height)
+  );
+
+  transition: clip-path 0.2s ease-in;
+
+  &[active] {
+    --video-translate: 0;
+    --video-height: 100%;
+    transition: clip-path 0.2s ease-out;
+  }
+}
+
+.work__links {
+  @include breakpoint.laptop {
+    flex: 1;
+  }
+}
+
+.work__links__link {
+  --work-link-border: 1px solid #{color.$black};
+  --work-link-color: #{color.$black};
+  --work-link-bg: transparent;
+  @include type.link-large;
+  position: relative;
+  display: block;
+  padding: 20px 0 20px 30px;
+  border-top: var(--work-link-border);
+  color: var(--work-link-color);
+  background: var(--work-link-bg);
+
+  &:hover,
+  &[active] {
+    --work-link-color: #{color.$white};
+    --work-link-bg: #{color.$black};
+  }
+
+  &:last-of-type {
+    border-bottom: var(--work-link-border);
+  }
+}
+
+.work__links__link__count {
+  position: absolute;
+  top: 10px;
+  left: 5px;
+  font-size: 14px;
+}

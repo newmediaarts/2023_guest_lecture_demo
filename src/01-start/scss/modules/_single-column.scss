@@ -1,0 +1,22 @@
+@use "../utils/type";
+@use "../utils/container";
+
+.single-column {
+  @include container.container;
+}
+
+.single-column__headline {
+  @include type.headline-two;
+}
+
+.single-column__body {
+  margin-top: 15px;
+
+  p {
+    @include type.body;
+  }
+
+  p + p {
+    margin-top: 10px;
+  }
+}
